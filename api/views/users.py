@@ -45,7 +45,7 @@ class SignIn(generics.CreateAPIView):
                     'email': user.email,
                     'token': token.key
                 }
-            })
+            }, status=status.HTTP_201_CREATED)
         else:
             return Response({ 'msg': 'The username and/or password is incorrect.' }, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
